@@ -21,6 +21,14 @@ const Statistics = (props) => {
   )
 }
 
+const Button = ({ onClick, text }) => {
+  return (
+    <button onClick={onClick}>
+      {text}
+    </button>
+  )
+}
+
 const App = () => {
   // tallenna napit omaan tilaansa
   const [good, setGood] = useState(0)
@@ -50,9 +58,9 @@ const App = () => {
   return (
     <div>
       <h1>give feedback</h1>
-      <button onClick={hyva}>good</button>
-      <button onClick={semi}>neutral</button>
-      <button onClick={huono}>bad</button>
+      <Button onClick={hyva} text="good" />
+      <Button onClick={semi} text="neutral" />
+      <Button onClick={huono} text="bad" />
 
       <h2>statistics</h2>
       <Statistics
